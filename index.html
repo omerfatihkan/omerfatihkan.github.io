@@ -59,7 +59,8 @@
         .app { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
         .app-head { display: flex; align-items: center; gap: 14px; }
         .icon {
-            width: 56px; height: 56px; border-radius: 14px; flex: none; display: grid; place-items: center; color: #fff;
+            width: 56px; height: 56px; border-radius: 13px; flex: none; display: block; object-fit: cover;
+            border: 1px solid var(--line); box-shadow: 0 4px 12px rgba(0,0,0,.12);
         }
         .icon svg { width: 26px; height: 26px; }
         .icon.clono { background: linear-gradient(135deg, #ff375f, #bf5af2 60%, #5e5ce6); }
@@ -163,7 +164,7 @@
     <section aria-labelledby="about-title">
         <h2 id="about-title" data-en="About" data-tr="Hakkımda">About</h2>
         <div class="card about">
-            <p data-en="I'm an iOS developer building native apps with Swift and SwiftUI. I care about clean design, smooth interactions and respecting people's privacy." data-tr="Swift ve SwiftUI ile native iOS uygulamaları geliştiriyorum. Sade tasarım, akıcı etkileşimler ve kullanıcı gizliliği benim için önemli.">I'm an iOS developer building native apps with Swift and SwiftUI. I care about clean design, smooth interactions and respecting people's privacy.</p>
+            <p data-en="I'm an iOS developer building native apps with Swift and SwiftUI." data-tr="Swift ve SwiftUI ile native iOS uygulamaları geliştiriyorum.">I'm an iOS developer building native apps with Swift and SwiftUI.</p>
             <div class="tags" aria-label="Skills">
                 <span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">Firebase</span><span class="tag">MapKit</span>
                 <span class="tag">Core Location</span><span class="tag">WidgetKit</span><span class="tag">Swift Charts</span><span class="tag">PhotosUI</span>
@@ -176,7 +177,7 @@
         <div class="apps">
             <article class="card app">
                 <div class="app-head">
-                    <div class="icon vf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></svg></div>
+                    <img class="icon" src="assets/viewfinder-icon.png" alt="Viewfinder app icon" width="56" height="56">
                     <div>
                         <h3>Viewfinder <span class="badge" data-en="New" data-tr="Yeni">New</span></h3>
                         <p data-en="A journal of the places you go." data-tr="Gittiğin yerlerin günlüğü.">A journal of the places you go.</p>
@@ -192,7 +193,7 @@
             </article>
             <article class="card app">
                 <div class="app-head">
-                    <div class="icon clono"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z" fill="currentColor"/><path d="M19 15l.9 2.6 2.6.9-2.6.9L19 22l-.9-2.6-2.6-.9 2.6-.9z" fill="currentColor"/></svg></div>
+                    <img class="icon" src="assets/clonographer-icon.png" alt="Clonographer app icon" width="56" height="56">
                     <div>
                         <h3>Clonographer</h3>
                         <p data-en="AI Art Generator." data-tr="Yapay zekâ ile görsel üretici.">AI Art Generator.</p>

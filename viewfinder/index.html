@@ -59,7 +59,8 @@
         .app { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
         .app-head { display: flex; align-items: center; gap: 14px; }
         .icon {
-            width: 56px; height: 56px; border-radius: 14px; flex: none; display: grid; place-items: center; color: #fff;
+            width: 56px; height: 56px; border-radius: 13px; flex: none; display: block; object-fit: cover;
+            border: 1px solid var(--line); box-shadow: 0 4px 12px rgba(0,0,0,.12);
         }
         .icon svg { width: 26px; height: 26px; }
         .icon.clono { background: linear-gradient(135deg, #ff375f, #bf5af2 60%, #5e5ce6); }
@@ -122,7 +123,7 @@
         .feat .tr { font-size: 13px; opacity: .8; margin-top: 2px; }
         .back { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 15px; margin-bottom: 28px; min-height: 44px; }
         .back svg { width: 16px; height: 16px; transform: rotate(180deg); }
-        .hero .icon { width: 84px; height: 84px; border-radius: 22px; margin: 0 auto 18px; box-shadow: 0 10px 30px rgba(10,132,255,.3); }
+        .hero .icon { width: 84px; height: 84px; border-radius: 19px; margin: 0 auto 18px; box-shadow: 0 10px 30px rgba(10,132,255,.3); }
         .hero .icon svg { width: 40px; height: 40px; }
         .soon { color: var(--muted); font-size: 14px; margin-top: 12px; }
     </style>
@@ -131,7 +132,7 @@
 <main>
     <a class="back" href="../"><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Ömer Fatih Kandırmaz</a>
     <header class="hero">
-        <div class="icon vf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></svg></div>
+        <img class="icon" src="../assets/viewfinder-icon.png" alt="Viewfinder app icon" width="56" height="56">
         <h1>Viewfinder</h1>
         <p class="role">A journal of the places you go</p>
         <p class="intro">Save every café, restaurant and hidden gem, rate it and share it with friends.<br><span lang="tr">Gittiğin yerlerin günlüğü: kaydet, puanla, arkadaşlarınla paylaş.</span></p>
