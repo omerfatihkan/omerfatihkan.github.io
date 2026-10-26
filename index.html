@@ -2,245 +2,193 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support & Contact - Ömer Fatih Kandırmaz</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Ömer Fatih Kandırmaz · iOS Developer</title>
+    <meta name="description" content="iOS apps by Ömer Fatih Kandırmaz: Clonographer and Viewfinder. Support, privacy and contact.">
+    <meta name="color-scheme" content="light dark">
     <style>
         :root {
-            --primary-color: #007aff;
-            --linkedin-color: #0077b5;
-            --dark-bg: #1c1c1e;
-            --card-bg: #ffffff;
-            --text-main: #1d1d1f;
-            --text-secondary: #86868b;
+            --bg: #f5f5f7; --bg-glow: rgba(0,122,255,.10);
+            --card: rgba(255,255,255,.72); --card-solid: #fff; --line: rgba(0,0,0,.08);
+            --text: #1d1d1f; --muted: #6e6e73; --accent: #0071e3;
+            --shadow: 0 1px 2px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.06);
         }
-
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #000; --bg-glow: rgba(10,132,255,.18);
+                --card: rgba(28,28,30,.72); --card-solid: #1c1c1e; --line: rgba(255,255,255,.10);
+                --text: #f5f5f7; --muted: #98989d; --accent: #2997ff;
+                --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 32px rgba(0,0,0,.35);
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            color: var(--text-main);
+            margin: 0; color: var(--text); background: var(--bg);
+            font: 17px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            background-image: radial-gradient(60rem 30rem at 50% -10rem, var(--bg-glow), transparent 70%);
+            background-repeat: no-repeat;
         }
-
-        .container {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 40px;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 420px;
-            width: 100%;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.5);
-            transition: transform 0.3s ease;
+        a { color: inherit; text-decoration: none; }
+        main {
+            max-width: 760px; margin: 0 auto;
+            padding: max(56px, env(safe-area-inset-top)) 20px max(40px, env(safe-area-inset-bottom));
         }
-
-        h1 {
-            font-size: 28px;
-            font-weight: 700;
-            margin: 0 0 10px 0;
-            color: var(--text-main);
-            letter-spacing: -0.5px;
+        .hero { text-align: center; margin-bottom: 44px; }
+        .avatar {
+            width: 84px; height: 84px; margin: 0 auto 18px; border-radius: 50%;
+            display: grid; place-items: center; font-size: 30px; font-weight: 700; letter-spacing: -.5px; color: #fff;
+            background: linear-gradient(135deg, #0a84ff, #5e5ce6 55%, #bf5af2);
+            box-shadow: 0 10px 30px rgba(94,92,230,.35);
         }
-
-        .subtitle {
-            font-size: 16px;
-            color: var(--text-secondary);
-            margin-bottom: 30px;
-            line-height: 1.5;
+        h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.08; letter-spacing: -.02em; margin: 0; font-weight: 700; }
+        .role { color: var(--accent); font-weight: 600; margin: 8px 0 0; font-size: 15px; letter-spacing: .02em; }
+        .intro { color: var(--muted); max-width: 30rem; margin: 14px auto 0; }
+        h2 {
+            font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+            font-weight: 600; margin: 0 0 12px 4px;
         }
-
-        .profile-section {
-            margin-bottom: 25px;
+        section { margin-bottom: 36px; }
+        .apps { display: grid; gap: 14px; grid-template-columns: 1fr; }
+        @media (min-width: 640px) { .apps { grid-template-columns: 1fr 1fr; } }
+        .card {
+            background: var(--card); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow);
+            -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px);
         }
-
-        .name {
-            font-weight: 600;
-            color: var(--text-main);
-            font-size: 18px;
-            display: block;
+        .app { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+        .app-head { display: flex; align-items: center; gap: 14px; }
+        .icon {
+            width: 56px; height: 56px; border-radius: 14px; flex: none; display: grid; place-items: center; color: #fff;
         }
-
-        .role {
-            font-size: 14px; 
-            color: var(--primary-color);
-            margin-top: 4px;
-            display: block;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .icon svg { width: 26px; height: 26px; }
+        .icon.clono { background: linear-gradient(135deg, #ff375f, #bf5af2 60%, #5e5ce6); }
+        .icon.vf { background: linear-gradient(135deg, #30d158, #0a84ff); }
+        .app h3 { margin: 0; font-size: 19px; letter-spacing: -.01em; }
+        .app p { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
+        .badge {
+            display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+            color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent);
+            padding: 2px 8px; border-radius: 999px; margin-left: 6px; vertical-align: 2px;
         }
-
-        /* Rating Box Styling */
-        .rating-box {
-            background-color: #fff9e6;
-            border: 1px solid #ffecb3;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 30px;
-            color: #bfa15f;
-            font-size: 14px;
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            min-height: 44px; padding: 0 18px; border-radius: 999px; font-weight: 600; font-size: 15px;
+            transition: transform .15s ease, opacity .15s ease, background-color .15s ease;
         }
-        
-        .rating-box strong {
-            display: block;
-            color: #d48806;
-            margin-bottom: 4px;
-            font-size: 15px;
+        .btn svg { width: 17px; height: 17px; }
+        .btn:active { transform: scale(.97); }
+        .btn.primary { background: var(--text); color: var(--bg); }
+        .btn.secondary { background: color-mix(in srgb, var(--text) 7%, transparent); }
+        @media (hover: hover) { .btn:hover { opacity: .85; } .row:hover { background: color-mix(in srgb, var(--text) 4%, transparent); } }
+        .app-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+        .app-links { font-size: 13px; color: var(--muted); }
+        .app-links a { color: var(--accent); }
+        .list { overflow: hidden; }
+        .row {
+            display: flex; align-items: center; gap: 14px; padding: 14px 18px; min-height: 60px;
+            border-top: 1px solid var(--line); transition: background-color .15s ease;
         }
-
-        .stars {
-            color: #ffc107;
-            font-size: 18px;
-            margin-top: 5px;
-            display: block;
-        }
-
-        /* Buttons Styling */
-        .button-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .button {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 16px 0;
-            border-radius: 14px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: all 0.2s ease;
-            box-sizing: border-box;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .button svg {
-            margin-right: 10px;
-            width: 20px;
-            height: 20px;
-        }
-
-        .button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .button:active {
-            transform: scale(0.98);
-        }
-
-        /* Specific Button Colors */
-        .app-btn {
-            background-color: #000;
-            color: white;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .email-btn {
-            background-color: #f2f2f7;
-            color: #007aff;
-        }
-        
-        .email-btn:hover {
-            background-color: #e5e5ea;
-        }
-
-        .linkedin-btn {
-            background-color: var(--linkedin-color);
-            color: white;
-        }
-
-        .insta-btn {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            color: white;
-        }
-
-        .footer {
-            margin-top: 40px;
-            font-size: 13px;
-            color: #c7c7cc;
-            font-weight: 500;
-        }
-        
-        .footer a {
-            color: #c7c7cc;
-            text-decoration: none;
-            margin: 0 8px;
-            transition: color 0.2s;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-            color: #86868b;
+        .row:first-child { border-top: 0; }
+        .row .glyph { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; color: #fff; flex: none; }
+        .row .glyph svg { width: 17px; height: 17px; }
+        .row .label { flex: 1; min-width: 0; }
+        .row .label strong { display: block; font-weight: 600; font-size: 16px; }
+        .row .label span { display: block; color: var(--muted); font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .arrow { width: 16px; height: 16px; color: var(--muted); flex: none; }
+        .g-mail { background: #0a84ff; } .g-li { background: #0a66c2; }
+        .g-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
+        .note { padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; }
+        .note .stars { color: #ff9f0a; letter-spacing: 2px; font-size: 15px; flex: none; margin-top: 1px; }
+        .note p { margin: 0; color: var(--muted); font-size: 15px; }
+        .note strong { color: var(--text); }
+        footer { text-align: center; color: var(--muted); font-size: 13px; line-height: 1.9; margin-top: 8px; }
+        footer a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+        footer a:hover { color: var(--text); }
+        .sep { opacity: .5; margin: 0 6px; }
+        @media (prefers-reduced-motion: no-preference) {
+            .hero, section { animation: rise .6s cubic-bezier(.2,.7,.2,1) both; }
+            section:nth-of-type(1) { animation-delay: .06s; } section:nth-of-type(2) { animation-delay: .12s; }
+            section:nth-of-type(3) { animation-delay: .18s; }
+            @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
         }
     </style>
 </head>
 <body>
+<main>
+    <header class="hero">
+        <div class="avatar" aria-hidden="true">ÖK</div>
+        <h1>Ömer Fatih Kandırmaz</h1>
+        <p class="role">iOS Developer</p>
+        <p class="intro">I build simple, well-crafted apps for iPhone. Questions or feedback about my apps? I'd love to hear from you.</p>
+    </header>
 
-    <div class="container">
-        <div class="profile-section">
-            <h1>Support & Contact</h1>
-            <span class="name">Ömer Fatih Kandırmaz</span>
-            <span class="role">iOS Developer</span>
+    <section aria-labelledby="apps-title">
+        <h2 id="apps-title">Apps</h2>
+        <div class="apps">
+            <article class="card app">
+                <div class="app-head">
+                    <div class="icon vf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></svg></div>
+                    <div>
+                        <h3>Viewfinder <span class="badge">New</span></h3>
+                        <p>A journal of the places you go.</p>
+                    </div>
+                </div>
+                <div class="app-actions">
+                    <a class="btn primary" href="https://omerfatihkan.github.io/viewfinder/">Learn more <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                </div>
+                <div class="app-links">
+                    <a href="https://omerfatihkan.github.io/viewfinder/privacy/">Privacy Policy</a><span class="sep">·</span><a href="https://omerfatihkan.github.io/viewfinder/terms/">Terms of Use</a>
+                </div>
+            </article>
+            <article class="card app">
+                <div class="app-head">
+                    <div class="icon clono"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.2 6.3L20.5 10l-6.3 2.2L12 18.5l-2.2-6.3L3.5 10l6.3-1.7z" fill="currentColor"/><path d="M19 15l.9 2.6 2.6.9-2.6.9L19 22l-.9-2.6-2.6-.9 2.6-.9z" fill="currentColor"/></svg></div>
+                    <div>
+                        <h3>Clonographer</h3>
+                        <p>AI Art Generator.</p>
+                    </div>
+                </div>
+                <div class="app-actions">
+                    <a class="btn primary" href="https://apps.apple.com/tr/app/ai-art-generator-clonographer/id6755553348?l=tr" target="_blank" rel="noopener"><svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-11.4 69.5-34.3z"/></svg> App Store</a>
+                </div>
+            </article>
         </div>
+    </section>
 
-        <p class="subtitle">
-            Have a question about my apps or want to share feedback? Feel free to reach out below.
-        </p>
-
-        <div class="rating-box">
-            <strong>Enjoying the app?</strong>
-            I'd really appreciate it if you could support me by rating the app 5 stars and leaving a review! 🚀
-            <span class="stars">★★★★★</span>
-        </div>
-
-        <div class="button-stack">
-            <a href="https://apps.apple.com/tr/app/ai-art-generator-clonographer/id6755553348?l=tr" target="_blank" class="button app-btn">
-                <svg viewBox="0 0 384 512" fill="white"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 52.3-11.4 69.5-34.3z"/></svg>
-                My Latest App: Clonographer
+    <section aria-labelledby="contact-title">
+        <h2 id="contact-title">Support &amp; Contact</h2>
+        <div class="card list">
+            <a class="row" href="mailto:omerfatihkandirmaz@gmail.com">
+                <span class="glyph g-mail"><svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></span>
+                <span class="label"><strong>Send Email</strong><span>omerfatihkandirmaz@gmail.com</span></span>
+                <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-
-            <a href="https://omerfatihkan.github.io/viewfinder/" class="button app-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-                New: Viewfinder
+            <a class="row" href="https://www.linkedin.com/in/omerfatihkandirmaz/" target="_blank" rel="noopener">
+                <span class="glyph g-li"><svg viewBox="0 0 448 512" aria-hidden="true"><path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg></span>
+                <span class="label"><strong>Connect on LinkedIn</strong><span>in/omerfatihkandirmaz</span></span>
+                <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-
-            <a href="mailto:omerfatihkandirmaz@gmail.com" class="button email-btn">
-                <svg viewBox="0 0 512 512" fill="currentColor"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
-                Send Email
-            </a>
-
-            <a href="https://www.linkedin.com/in/omerfatihkandirmaz/" target="_blank" class="button linkedin-btn">
-                <svg viewBox="0 0 448 512" fill="white"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
-                Connect on LinkedIn
-            </a>
-
-            <a href="https://instagram.com/omerkandirmaz" target="_blank" class="button insta-btn">
-                <svg viewBox="0 0 448 512" fill="white"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.5 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.9 0-184.9zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-                Follow on Instagram
+            <a class="row" href="https://www.instagram.com/omerfatihkandirmaz/" target="_blank" rel="noopener">
+                <span class="glyph g-ig"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></span>
+                <span class="label"><strong>Follow on Instagram</strong><span>@omerfatihkandirmaz</span></span>
+                <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
         </div>
+    </section>
 
-        <div class="footer">
-            &copy; 2025 Ömer Fatih Kandırmaz <br>
-            <a href="https://omerfatihkan.github.io/privacy/" target="_blank">Privacy Policy</a> &bull; 
-            <a href="https://omerfatihkan.github.io/terms/" target="_blank">Terms of Use</a>
-            <br>Viewfinder:
-            <a href="https://omerfatihkan.github.io/viewfinder/privacy/" target="_blank">Privacy Policy</a> &bull;
-            <a href="https://omerfatihkan.github.io/viewfinder/terms/" target="_blank">Terms of Use</a>
+    <section aria-label="Review request">
+        <div class="card note">
+            <span class="stars" aria-hidden="true">★★★★★</span>
+            <p><strong>Enjoying an app?</strong> Rating it on the App Store and leaving a short review helps a lot. Thank you!</p>
         </div>
-    </div>
+    </section>
 
+    <footer>
+        &copy; 2025–2026 Ömer Fatih Kandırmaz<br>
+        <a href="https://omerfatihkan.github.io/privacy/">Privacy Policy</a><span class="sep">·</span><a href="https://omerfatihkan.github.io/terms/">Terms of Use</a><br>
+        Viewfinder: <a href="https://omerfatihkan.github.io/viewfinder/privacy/">Privacy Policy</a><span class="sep">·</span><a href="https://omerfatihkan.github.io/viewfinder/terms/">Terms of Use</a>
+    </footer>
+</main>
 </body>
 </html>

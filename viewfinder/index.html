@@ -1,14 +1,177 @@
-<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Viewfinder</title><style>
-:root{--bg:#f7f7f9;--fg:#16161a;--muted:#5d5d66;--card:#fff;--line:#e4e4ea;--accent:#4f46e5}
-@media (prefers-color-scheme:dark){:root{--bg:#0f0f12;--fg:#f2f2f5;--muted:#a1a1ab;--card:#1a1a20;--line:#2b2b33;--accent:#8b85ff}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
-main{max-width:760px;margin:0 auto;padding:32px 16px 64px}h1{font-size:28px;margin:0 0 4px}h2{font-size:19px;margin:28px 0 8px}
-.meta{color:var(--muted);font-size:14px}nav{display:flex;gap:8px;margin:16px 0 8px}nav a{padding:6px 14px;border:1px solid var(--line);border-radius:999px;color:var(--fg);text-decoration:none;background:var(--card)}
-section.lang{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:8px 20px 20px;margin-top:20px}a{color:var(--accent)}ul{padding-left:20px}
-</style></head><body><main>
-<h1>Viewfinder</h1><p class="meta">Viewfinder · Son güncelleme / Last updated: 26 Ekim 2026 / October 26, 2026</p>
-<nav><a href="#tr">Türkçe</a><a href="#en">English</a><a href="../">Ömer Fatih Kandırmaz</a></nav>
-<section class="lang" id="tr" lang="tr"><h2>Viewfinder</h2><p>Gittiğin yerlerin günlüğü.</p><ul><li><a href='privacy/'>Gizlilik Politikası</a></li><li><a href='terms/'>Kullanım Koşulları</a></li><li>Destek: <a href="mailto:omerfatihkandirmaz@gmail.com">omerfatihkandirmaz@gmail.com</a></li></ul></section>
-<section class="lang" id="en" lang="en"><h2>Viewfinder</h2><p>A journal of the places you go.</p><ul><li><a href='privacy/#en'>Privacy Policy</a></li><li><a href='terms/#en'>Terms of Use</a></li><li>Support: <a href="mailto:omerfatihkandirmaz@gmail.com">omerfatihkandirmaz@gmail.com</a></li></ul></section>
-</main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Viewfinder · A journal of the places you go</title>
+    <meta name="description" content="Viewfinder for iPhone: save the places you go, rate them and share with friends.">
+    <meta name="color-scheme" content="light dark">
+    <style>
+        :root {
+            --bg: #f5f5f7; --bg-glow: rgba(0,122,255,.10);
+            --card: rgba(255,255,255,.72); --card-solid: #fff; --line: rgba(0,0,0,.08);
+            --text: #1d1d1f; --muted: #6e6e73; --accent: #0071e3;
+            --shadow: 0 1px 2px rgba(0,0,0,.04), 0 12px 32px rgba(0,0,0,.06);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #000; --bg-glow: rgba(10,132,255,.18);
+                --card: rgba(28,28,30,.72); --card-solid: #1c1c1e; --line: rgba(255,255,255,.10);
+                --text: #f5f5f7; --muted: #98989d; --accent: #2997ff;
+                --shadow: 0 1px 2px rgba(0,0,0,.4), 0 12px 32px rgba(0,0,0,.35);
+            }
+        }
+        * { box-sizing: border-box; }
+        html { -webkit-text-size-adjust: 100%; }
+        body {
+            margin: 0; color: var(--text); background: var(--bg);
+            font: 17px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            background-image: radial-gradient(60rem 30rem at 50% -10rem, var(--bg-glow), transparent 70%);
+            background-repeat: no-repeat;
+        }
+        a { color: inherit; text-decoration: none; }
+        main {
+            max-width: 760px; margin: 0 auto;
+            padding: max(56px, env(safe-area-inset-top)) 20px max(40px, env(safe-area-inset-bottom));
+        }
+        .hero { text-align: center; margin-bottom: 44px; }
+        .avatar {
+            width: 84px; height: 84px; margin: 0 auto 18px; border-radius: 50%;
+            display: grid; place-items: center; font-size: 30px; font-weight: 700; letter-spacing: -.5px; color: #fff;
+            background: linear-gradient(135deg, #0a84ff, #5e5ce6 55%, #bf5af2);
+            box-shadow: 0 10px 30px rgba(94,92,230,.35);
+        }
+        h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.08; letter-spacing: -.02em; margin: 0; font-weight: 700; }
+        .role { color: var(--accent); font-weight: 600; margin: 8px 0 0; font-size: 15px; letter-spacing: .02em; }
+        .intro { color: var(--muted); max-width: 30rem; margin: 14px auto 0; }
+        h2 {
+            font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted);
+            font-weight: 600; margin: 0 0 12px 4px;
+        }
+        section { margin-bottom: 36px; }
+        .apps { display: grid; gap: 14px; grid-template-columns: 1fr; }
+        @media (min-width: 640px) { .apps { grid-template-columns: 1fr 1fr; } }
+        .card {
+            background: var(--card); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow);
+            -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px);
+        }
+        .app { padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+        .app-head { display: flex; align-items: center; gap: 14px; }
+        .icon {
+            width: 56px; height: 56px; border-radius: 14px; flex: none; display: grid; place-items: center; color: #fff;
+        }
+        .icon svg { width: 26px; height: 26px; }
+        .icon.clono { background: linear-gradient(135deg, #ff375f, #bf5af2 60%, #5e5ce6); }
+        .icon.vf { background: linear-gradient(135deg, #30d158, #0a84ff); }
+        .app h3 { margin: 0; font-size: 19px; letter-spacing: -.01em; }
+        .app p { margin: 2px 0 0; color: var(--muted); font-size: 15px; }
+        .badge {
+            display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase;
+            color: var(--accent); background: color-mix(in srgb, var(--accent) 12%, transparent);
+            padding: 2px 8px; border-radius: 999px; margin-left: 6px; vertical-align: 2px;
+        }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+            min-height: 44px; padding: 0 18px; border-radius: 999px; font-weight: 600; font-size: 15px;
+            transition: transform .15s ease, opacity .15s ease, background-color .15s ease;
+        }
+        .btn svg { width: 17px; height: 17px; }
+        .btn:active { transform: scale(.97); }
+        .btn.primary { background: var(--text); color: var(--bg); }
+        .btn.secondary { background: color-mix(in srgb, var(--text) 7%, transparent); }
+        @media (hover: hover) { .btn:hover { opacity: .85; } .row:hover { background: color-mix(in srgb, var(--text) 4%, transparent); } }
+        .app-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+        .app-links { font-size: 13px; color: var(--muted); }
+        .app-links a { color: var(--accent); }
+        .list { overflow: hidden; }
+        .row {
+            display: flex; align-items: center; gap: 14px; padding: 14px 18px; min-height: 60px;
+            border-top: 1px solid var(--line); transition: background-color .15s ease;
+        }
+        .row:first-child { border-top: 0; }
+        .row .glyph { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; color: #fff; flex: none; }
+        .row .glyph svg { width: 17px; height: 17px; }
+        .row .label { flex: 1; min-width: 0; }
+        .row .label strong { display: block; font-weight: 600; font-size: 16px; }
+        .row .label span { display: block; color: var(--muted); font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .arrow { width: 16px; height: 16px; color: var(--muted); flex: none; }
+        .g-mail { background: #0a84ff; } .g-li { background: #0a66c2; }
+        .g-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
+        .note { padding: 18px 20px; display: flex; gap: 14px; align-items: flex-start; }
+        .note .stars { color: #ff9f0a; letter-spacing: 2px; font-size: 15px; flex: none; margin-top: 1px; }
+        .note p { margin: 0; color: var(--muted); font-size: 15px; }
+        .note strong { color: var(--text); }
+        footer { text-align: center; color: var(--muted); font-size: 13px; line-height: 1.9; margin-top: 8px; }
+        footer a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+        footer a:hover { color: var(--text); }
+        .sep { opacity: .5; margin: 0 6px; }
+        @media (prefers-reduced-motion: no-preference) {
+            .hero, section { animation: rise .6s cubic-bezier(.2,.7,.2,1) both; }
+            section:nth-of-type(1) { animation-delay: .06s; } section:nth-of-type(2) { animation-delay: .12s; }
+            section:nth-of-type(3) { animation-delay: .18s; }
+            @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+        }
+
+        .feats { display: grid; gap: 0; grid-template-columns: 1fr; padding: 6px 0; }
+        @media (min-width: 640px) { .feats { grid-template-columns: 1fr 1fr; } }
+        .feat { display: flex; gap: 14px; padding: 14px 18px; align-items: flex-start; }
+        .feat .emoji { font-size: 24px; line-height: 1.2; flex: none; }
+        .feat strong { display: block; font-size: 16px; }
+        .feat span { display: block; color: var(--muted); font-size: 14px; }
+        .feat .tr { font-size: 13px; opacity: .8; margin-top: 2px; }
+        .back { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 15px; margin-bottom: 28px; min-height: 44px; }
+        .back svg { width: 16px; height: 16px; transform: rotate(180deg); }
+        .hero .icon { width: 84px; height: 84px; border-radius: 22px; margin: 0 auto 18px; box-shadow: 0 10px 30px rgba(10,132,255,.3); }
+        .hero .icon svg { width: 40px; height: 40px; }
+        .soon { color: var(--muted); font-size: 14px; margin-top: 12px; }
+    </style>
+</head>
+<body>
+<main>
+    <a class="back" href="../"><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Ömer Fatih Kandırmaz</a>
+    <header class="hero">
+        <div class="icon vf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></svg></div>
+        <h1>Viewfinder</h1>
+        <p class="role">A journal of the places you go</p>
+        <p class="intro">Save every café, restaurant and hidden gem, rate it and share it with friends.<br><span lang="tr">Gittiğin yerlerin günlüğü: kaydet, puanla, arkadaşlarınla paylaş.</span></p>
+        <p class="soon">Coming soon to the App Store · Yakında App Store'da</p>
+    </header>
+
+    <section aria-labelledby="f-title">
+        <h2 id="f-title">Features · Özellikler</h2>
+        <div class="card feats">
+            <div class="feat"><span class="emoji" aria-hidden="true">📍</span><div><strong>Save visits</strong><span>Ratings, photos, price, wait time, parking and vibes.</span><span class="tr" lang="tr">Ziyaretleri kaydet · Puan, fotoğraf, fiyat, bekleme, otopark ve ortam.</span></div></div>
+            <div class="feat"><span class="emoji" aria-hidden="true">🗺️</span><div><strong>Your own map</strong><span>Your spots, your friends' places and everyone's picks.</span><span class="tr" lang="tr">Kendi haritan · Senin, arkadaşlarının ve herkesin mekanları.</span></div></div>
+            <div class="feat"><span class="emoji" aria-hidden="true">✨</span><div><strong>What to do today?</strong><span>A few questions, one great suggestion.</span><span class="tr" lang="tr">Bugün ne yapalım? · Birkaç soru, sana uygun bir öneri.</span></div></div>
+            <div class="feat"><span class="emoji" aria-hidden="true">👥</span><div><strong>With friends</strong><span>Feed, likes, comments and shared lists.</span><span class="tr" lang="tr">Arkadaşlarınla · Akış, beğeni, yorum ve ortak listeler.</span></div></div>
+            <div class="feat"><span class="emoji" aria-hidden="true">🏅</span><div><strong>City passport</strong><span>Stats, badges and a shareable summary.</span><span class="tr" lang="tr">Şehir pasaportu · İstatistikler, rozetler, paylaşılabilir özet.</span></div></div>
+            <div class="feat"><span class="emoji" aria-hidden="true">🔒</span><div><strong>Privacy first</strong><span>No ads, no tracking, granular controls.</span><span class="tr" lang="tr">Gizlilik sende · Reklam ve takip yok, ayrıntılı ayarlar.</span></div></div>
+        </div>
+    </section>
+
+    <section aria-labelledby="s-title">
+        <h2 id="s-title">Support · Destek</h2>
+        <div class="card list">
+            <a class="row" href="mailto:omerfatihkandirmaz@gmail.com">
+                <span class="glyph g-mail"><svg viewBox="0 0 512 512" aria-hidden="true"><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></span>
+                <span class="label"><strong>Email support · E-posta</strong><span>omerfatihkandirmaz@gmail.com</span></span>
+                <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="row" href="privacy/">
+                <span class="glyph g-li" style="background:#30d158">🔒</span>
+                <span class="label"><strong>Privacy Policy · Gizlilik Politikası</strong><span>Türkçe / English</span></span>
+                <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a class="row" href="terms/">
+                <span class="glyph g-li" style="background:#8e8e93">📄</span>
+                <span class="label"><strong>Terms of Use · Kullanım Koşulları</strong><span>Türkçe / English</span></span>
+                <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <footer>&copy; 2026 Ömer Fatih Kandırmaz</footer>
+</main>
+</body>
+</html>
