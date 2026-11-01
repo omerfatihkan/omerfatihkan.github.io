@@ -80,6 +80,9 @@
         .btn svg { width: 17px; height: 17px; }
         .btn:active { transform: scale(.97); }
         .btn.primary { background: var(--text); color: var(--bg); }
+        .btn-row { display: flex; gap: 8px; width: 100%; }
+        .btn-row .btn { flex: 1 1 0; padding: 0 12px; white-space: nowrap; }
+        .btn.testflight { background: #8fcbf6; color: #0b3a5c; }
         .btn.secondary { background: color-mix(in srgb, var(--text) 7%, transparent); }
         @media (hover: hover) { .btn:hover { opacity: .85; } .row:hover { background: color-mix(in srgb, var(--text) 4%, transparent); } }
         .app-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: auto; }
@@ -163,11 +166,11 @@
     <section aria-labelledby="about-title">
         <h2 id="about-title" data-en="About" data-tr="Hakkımda">About</h2>
         <div class="card about">
-            <p data-en="Questions or feedback about my apps? I'd love to hear from you." data-tr="Uygulamalarımla ilgili soru veya geri bildirimin mi var? Yazmandan mutluluk duyarım.">Questions or feedback about my apps? I'd love to hear from you.</p>
             <p data-en="I study Computer Engineering at Ankara Medipol University and build my own iOS apps on the side with Swift and SwiftUI." data-tr="Ankara Medipol Üniversitesi'nde Bilgisayar Mühendisliği okuyorum ve kendimce Swift ve SwiftUI ile iOS uygulamaları geliştiriyorum.">I study Computer Engineering at Ankara Medipol University and build my own iOS apps on the side with Swift and SwiftUI.</p>
+            <p data-en="Questions or feedback about my apps? I'd love to hear from you." data-tr="Uygulamalarımla ilgili soru veya geri bildirimin mi var? Yazmandan mutluluk duyarım.">Questions or feedback about my apps? I'd love to hear from you.</p>
             <div class="tags" aria-label="Skills">
                 <span class="tag">Swift</span><span class="tag">SwiftUI</span><span class="tag">MapKit</span>
-                <span class="tag">Core Location</span><span class="tag">WidgetKit</span><span class="tag">Swift Charts</span><span class="tag">PhotosUI</span>
+                <span class="tag">Core Location</span>
             </div>
         </div>
     </section>
@@ -184,8 +187,7 @@
                     </div>
                 </div>
                 <div class="app-actions">
-                    <a class="btn primary" href="https://omerfatihkan.github.io/viewfinder/"><span data-en="Learn more" data-tr="İncele">Learn more</span> <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-                    <a class="btn secondary" href="https://testflight.apple.com/join/TucadVUm" target="_blank" rel="noopener"><span data-en="Join the beta on TestFlight" data-tr="TestFlight ile beta'ya katıl">Join the beta on TestFlight</span> <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                    <div class="btn-row"><a class="btn primary" href="https://omerfatihkan.github.io/viewfinder/"><span data-en="Learn more" data-tr="İncele">Learn more</span> <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="btn testflight" href="https://testflight.apple.com/join/TucadVUm" target="_blank" rel="noopener"><span data-en="TestFlight beta" data-tr="TestFlight beta">TestFlight beta</span> <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
                     <span class="soon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span data-en="Soon on the App Store" data-tr="Yakında App Store'da">Soon on the App Store</span></span>
                 </div>
                 <div class="app-links">
