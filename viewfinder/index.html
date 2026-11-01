@@ -126,6 +126,17 @@
         .hero .icon { width: 84px; height: 84px; border-radius: 19px; margin: 0 auto 18px; box-shadow: 0 10px 30px rgba(10,132,255,.3); }
         .hero .icon svg { width: 40px; height: 40px; }
         .soon { color: var(--muted); font-size: 14px; margin-top: 12px; }
+        .beta { padding: 20px 18px; display: grid; gap: 14px; }
+        .beta .pill { justify-self: start; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+            color: #0b3a5c; background: #8fcbf6; padding: 4px 10px; border-radius: 999px; }
+        .beta h3 { margin: 0; font-size: 20px; letter-spacing: -.01em; }
+        .beta p { margin: 0; color: var(--muted); font-size: 15px; }
+        .steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; gap: 10px; }
+        .steps li { counter-increment: s; display: flex; gap: 12px; align-items: flex-start; font-size: 15px; }
+        .steps li::before { content: counter(s); flex: none; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center;
+            font-size: 13px; font-weight: 700; color: #0b3a5c; background: #8fcbf6; margin-top: 1px; }
+        .steps li span { display: block; color: var(--muted); font-size: 13px; }
+        .btn.testflight { background: #8fcbf6; color: #0b3a5c; justify-self: stretch; }
     </style>
 </head>
 <body>
@@ -138,6 +149,21 @@
         <p class="intro">Save every café, restaurant and hidden gem, rate it and share it with friends.<br><span lang="tr">Gittiğin yerlerin günlüğü: kaydet, puanla, arkadaşlarınla paylaş.</span></p>
         <p class="soon">Coming soon to the App Store · Yakında App Store'da</p>
     </header>
+
+    <section aria-labelledby="b-title">
+        <h2 id="b-title">Beta · Beta Sürümü</h2>
+        <div class="card beta">
+            <span class="pill">Beta</span>
+            <h3>Try it now on TestFlight<br><span lang="tr" style="font-size:16px;font-weight:600;color:var(--muted)">Şimdi TestFlight'tan dene</span></h3>
+            <p>Viewfinder is in open beta. Join to use it before the App Store release and help shape it with your feedback.<br><span lang="tr">Viewfinder açık betada. App Store'dan önce kullan, geri bildirimlerinle birlikte şekillendirelim.</span></p>
+            <ol class="steps">
+                <li><div>Install <strong>TestFlight</strong> from the App Store<span lang="tr">App Store'dan <strong>TestFlight</strong>'ı indir</span></div></li>
+                <li><div>Tap the button below to join the beta<span lang="tr">Aşağıdaki butona basıp betaya katıl</span></div></li>
+                <li><div>Open Viewfinder and tell us what you think in Settings › Feedback<span lang="tr">Viewfinder'ı aç, Ayarlar › Geri bildirim'den görüşlerini yaz</span></div></li>
+            </ol>
+            <a class="btn testflight" href="https://testflight.apple.com/join/TucadVUm" target="_blank" rel="noopener">Get on TestFlight · TestFlight'tan indir</a>
+        </div>
+    </section>
 
     <section aria-labelledby="f-title">
         <h2 id="f-title">Features · Özellikler</h2>
