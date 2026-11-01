@@ -102,10 +102,14 @@
         .arrow { width: 16px; height: 16px; color: var(--muted); flex: none; }
         .g-mail { background: #0a84ff; } .g-li { background: #0a66c2; }
         .g-ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
-        .note { padding: 12px 14px; display: flex; gap: 14px; align-items: flex-start; }
-        .note .stars { color: #ff9f0a; letter-spacing: 2px; font-size: 15px; flex: none; margin-top: 1px; }
-        .note p { margin: 0; color: var(--muted); font-size: 15px; }
-        .note strong { color: var(--text); }
+        .note { padding: 18px 16px 16px; display: grid; justify-items: center; gap: 6px; text-align: center;
+            background: linear-gradient(180deg, color-mix(in srgb, #ff9f0a 10%, var(--card)), var(--card)); }
+        .note .stars { font-size: 26px; letter-spacing: 4px; line-height: 1;
+            background: linear-gradient(180deg, #ffd60a, #ff9f0a); -webkit-background-clip: text; background-clip: text;
+            -webkit-text-fill-color: transparent; color: transparent; }
+        .note h3 { margin: 4px 0 0; font-size: 17px; font-weight: 700; letter-spacing: -.01em; }
+        .note p { margin: 0; color: var(--muted); font-size: 14px; max-width: 26rem; }
+        .note .btn { margin-top: 8px; min-height: 38px; }
         footer { text-align: center; color: var(--muted); font-size: 13px; line-height: 1.8; margin-top: 4px; }
         footer a { color: var(--muted); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
         footer a:hover { color: var(--text); }
@@ -251,7 +255,9 @@
     <section aria-label="Review request">
         <div class="card note">
             <span class="stars" aria-hidden="true">★★★★★</span>
-            <p data-en="&lt;strong&gt;Enjoying an app?&lt;/strong&gt; Rating it on the App Store and leaving a short review helps a lot. Thank you!" data-tr="&lt;strong&gt;Uygulamayı beğendin mi?&lt;/strong&gt; App Store'da puan verip kısa bir yorum bırakman çok destek olur. Teşekkürler!" data-html><strong>Enjoying an app?</strong> Rating it on the App Store and leaving a short review helps a lot. Thank you!</p>
+            <h3 data-en="Enjoying an app?" data-tr="Uygulamayı beğendin mi?">Enjoying an app?</h3>
+            <p data-en="A quick rating and a short review on the App Store helps a lot. Thank you!" data-tr="App Store'da puan verip kısa bir yorum bırakman çok destek olur. Teşekkürler!">A quick rating and a short review on the App Store helps a lot. Thank you!</p>
+            <a class="btn primary" href="https://apps.apple.com/tr/app/ai-art-generator-clonographer/id6755553348?action=write-review" target="_blank" rel="noopener"><span data-en="Rate on the App Store" data-tr="App Store'da puanla">Rate on the App Store</span></a>
         </div>
     </section>
 
